@@ -2,15 +2,16 @@
 
 How this was created:
 
-npm install -g create-react-app
-create-react-app surveyjs-create-react-app-example
-
-
-
-
+1. npm install -g create-react-app
+2. create-react-app surveyjs-create-react-app-example
+3. npm install survey-react --save 
+4. copied contents of node-modules/survey-react/css/survey.css into ./src/index.css (TODO: just reference from node-modules?)
+5. updated App.js with example code from @dmitrykurmanov and surveyjs
 
 
 Generated README below. 
+
+-------------------------------------------------------------------------------------
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).

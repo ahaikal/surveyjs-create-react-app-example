@@ -1,19 +1,34 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
+import React, {Component} from 'react';
 import './App.css';
+import * as Survey from 'survey-react';
 
 class App extends Component {
+    constructor() {
+        super();
+        this.surveyJson = {
+            pages: [
+                {
+                    name: "page1",
+                    questions: [
+                        {
+                            type: "text",
+                            name: "age",
+                            title: "enter age"
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+
+    sendDataToServer(survey) {
+       var resultAsString = JSON.stringify(survey.data);
+       alert(resultAsString); //send Ajax request to your web server.
+    };
+
   render() {
     return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
+        <Survey.Survey json={this.surveyJson} onComplete={this.sendDataToServer} />
     );
   }
 }
